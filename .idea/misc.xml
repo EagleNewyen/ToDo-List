@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/itgma/AndroidStudioProjects/ToDoPt2/app/src/main/res/layout/activity_main.xml" value="0.2692502532928065" />
+        <entry key="..\:/Users/itgma/AndroidStudioProjects/ToDoPt2/app/src/main/res/layout/fragment_add_screen.xml" value="0.2624113475177305" />
+        <entry key="..\:/Users/itgma/AndroidStudioProjects/ToDoPt2/app/src/main/res/layout/fragment_blank.xml" value="0.2692502532928065" />
+        <entry key="..\:/Users/itgma/AndroidStudioProjects/ToDoPt2/app/src/main/res/layout/fragment_detail_screen.xml" value="0.2692502532928065" />
+        <entry key="..\:/Users/itgma/AndroidStudioProjects/ToDoPt2/app/src/main/res/layout/fragment_first_screen_task.xml" value="0.3115942028985507" />
+        <entry key="..\:/Users/itgma/AndroidStudioProjects/ToDoPt2/app/src/main/res/layout/tasks_rv.xml" value="0.20294567712318287" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

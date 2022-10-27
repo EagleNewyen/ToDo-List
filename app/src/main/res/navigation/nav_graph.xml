@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/firstScreenTaskFragment">
+
+    <fragment
+        android:id="@+id/firstScreenTaskFragment"
+        android:name="com.example.todopt2.ui.FirstScreenTaskFragment"
+        android:label="Duties"
+        tools:layout="@layout/fragment_first_screen_task">
+        <action
+            android:id="@+id/action_firstScreenTaskFragment_to_addScreenFragment"
+            app:destination="@id/addScreenFragment" />
+        <action
+            android:id="@+id/action_firstScreenTaskFragment_to_detailScreenFragment"
+            app:destination="@id/detailScreenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addScreenFragment"
+        android:name="com.example.todopt2.ui.AddScreenFragment"
+        android:label="Add"
+        tools:layout="@layout/fragment_add_screen">
+        <action
+            android:id="@+id/action_addScreenFragment_to_firstScreenTaskFragment"
+            app:destination="@id/firstScreenTaskFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailScreenFragment"
+        android:name="com.example.todopt2.ui.DetailScreenFragment"
+        android:label="Edit"
+        tools:layout="@layout/fragment_detail_screen">
+        <action
+            android:id="@+id/action_detailScreenFragment_to_firstScreenTaskFragment"
+            app:destination="@id/firstScreenTaskFragment" />
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
+</navigation>
