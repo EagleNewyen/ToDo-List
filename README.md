@@ -1,4 +1,4 @@
-# ToDo List
+#         To-Do List
 
 ## Preface
 A straightforward app that I completed within 2 weeks to practice the concept of MVVM! <br>
