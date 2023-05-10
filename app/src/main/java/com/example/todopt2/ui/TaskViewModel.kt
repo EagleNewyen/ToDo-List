@@ -1,6 +1,5 @@
 package com.example.todopt2.ui
 
-import android.widget.CheckBox
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
@@ -8,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.todopt2.data.Task
 import com.example.todopt2.data.TaskDao
 import dagger.hilt.android.lifecycle.HiltViewModel
+
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -16,7 +16,9 @@ class TaskViewModel @Inject constructor(
     private val taskDao: TaskDao
 ): ViewModel() {
 
-    private fun insertList(task: Task) {
+
+
+    fun insertList(task: Task) {
         viewModelScope.launch {
             taskDao.insert(task)
         }
@@ -38,6 +40,12 @@ class TaskViewModel @Inject constructor(
 
     val tasks = taskDao.getTask().asLiveData()
 
+    fun insertTaskItem(task: String, complete: Boolean, id: Int) {
+        if (task.isEmpty()) {
+
+        }
+    }
+
 
 
     // verify if the text in the TextFields are empty or not, toDo is the textfield
@@ -49,7 +57,7 @@ class TaskViewModel @Inject constructor(
     }
 
     // assigns whatever string & chechbox state to the Entity
-    private fun getNewTaskEntry(taskTxt: String, complet: Boolean): Task {
+    fun getNewTaskEntry(taskTxt: String, complet: Boolean): Task {
         return Task(
             taskText = taskTxt,
             complete = complet

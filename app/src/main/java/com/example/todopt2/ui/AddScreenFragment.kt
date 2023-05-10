@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.example.todopt2.R
+import com.example.todopt2.Constants.ERROR_MESSAGE
 import com.example.todopt2.databinding.FragmentAddScreenBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -21,11 +21,12 @@ class AddScreenFragment : Fragment() {
 
 
 
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         _binding = FragmentAddScreenBinding.inflate(inflater, container, false)
         return binding.root
@@ -37,7 +38,7 @@ class AddScreenFragment : Fragment() {
         )
     }
 
-    private fun saveButtonLog() {
+     fun saveButtonLog() {
         if(textFieldEmpty()) {
             viewModel.addTask(
                 binding.textInput.text.toString(),
@@ -52,8 +53,20 @@ class AddScreenFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.apply {
-            saveButton.setOnClickListener { saveButtonLog() }
+            saveButton.setOnClickListener {
+                val taskTxt = binding.textInput.text.toString()
+                if(taskTxt.isEmpty()){
+                    binding.textInput.error = ERROR_MESSAGE
+                    return@setOnClickListener
+                }
+                saveButtonLog()
+            }
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 }

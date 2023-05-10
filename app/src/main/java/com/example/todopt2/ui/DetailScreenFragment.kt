@@ -39,7 +39,7 @@ class DetailScreenFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         _binding = FragmentDetailScreenBinding.inflate(inflater, container, false)
         return binding.root
@@ -56,6 +56,11 @@ class DetailScreenFragment : Fragment() {
             bind(task)
         }
 
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
 }

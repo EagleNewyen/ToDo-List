@@ -10,6 +10,7 @@ import javax.inject.Provider
 
 @Database(entities = [Task::class], version = 1, exportSchema = false) // set false to not keep schema version history backups
 
+// the Model or Repository in MVVM
 abstract class TaskDatabase: RoomDatabase() {
 
     abstract fun taskDao(): TaskDao
