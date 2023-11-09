@@ -5,13 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="16dp"
-    tools:context=".ui.AddScreenFragment">
+    tools:context=".ui.add_edit_screen.AddScreenFragment">
 
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:paddingBottom="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -20,7 +21,22 @@
             android:id="@+id/textInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="" />
+            android:hint="Task..." />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputInfoLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/textInfoInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Description..(Optional)" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <CheckBox
@@ -30,7 +46,7 @@
         android:text="Completed"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputInfoLayout" />
 
     <Button
         android:id="@+id/saveButton"

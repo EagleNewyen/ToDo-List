@@ -1,4 +1,4 @@
-package com.example.todopt2.ui
+package com.example.todopt2.ui.add_edit_screen
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -14,7 +14,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class AddScreenFragment : Fragment() {
 
-    private val viewModel: TaskViewModel by viewModels()
+    private val viewModel: AddEditViewModel by viewModels()
 
     private var  _binding: FragmentAddScreenBinding? = null
     private val binding get() = _binding!!
@@ -34,17 +34,20 @@ class AddScreenFragment : Fragment() {
 
     private fun textFieldEmpty(): Boolean {
         return viewModel.isEntryValid(
-            binding.textInputLayout.toString()
+            binding.textInputLayout.toString(),
+            binding.textInputInfoLayout.toString()
         )
     }
 
-     fun saveButtonLog() {
+      private fun saveButtonLog() {
         if(textFieldEmpty()) {
             viewModel.addTask(
                 binding.textInput.text.toString(),
+                binding.textInfoInput.text.toString(),
                 binding.checkBoxAdd.isChecked
             )
-            val action = AddScreenFragmentDirections.actionAddScreenFragmentToFirstScreenTaskFragment()
+            val action =
+                AddScreenFragmentDirections.actionAddScreenFragmentToFirstScreenTaskFragment()
             findNavController().navigate(action)
         }
     }

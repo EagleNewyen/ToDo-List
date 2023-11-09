@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/firstScreenTaskFragment"
-        android:name="com.example.todopt2.ui.FirstScreenTaskFragment"
+        android:name="com.example.todopt2.ui.task_screen.FirstScreenTaskFragment"
         android:label="Duties"
         tools:layout="@layout/fragment_first_screen_task">
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/addScreenFragment"
-        android:name="com.example.todopt2.ui.AddScreenFragment"
+        android:name="com.example.todopt2.ui.add_edit_screen.AddScreenFragment"
         android:label="Add"
         tools:layout="@layout/fragment_add_screen">
         <action
@@ -28,14 +28,16 @@
     </fragment>
     <fragment
         android:id="@+id/detailScreenFragment"
-        android:name="com.example.todopt2.ui.DetailScreenFragment"
+        android:name="com.example.todopt2.ui.add_edit_screen.DetailScreenFragment"
         android:label="Edit"
         tools:layout="@layout/fragment_detail_screen">
         <action
             android:id="@+id/action_detailScreenFragment_to_firstScreenTaskFragment"
             app:destination="@id/firstScreenTaskFragment" />
         <argument
-            android:name="id"
-            app:argType="integer" />
+            app:argType="com.example.todopt2.data.Task"
+            app:nullable="true"
+            android:name="task"
+            android:defaultValue="@null" />
     </fragment>
 </navigation>
