@@ -1,7 +1,7 @@
 #         To-Do List
 
 ## Preface
-A straightforward app that I completed within 2 weeks to practice the concept of MVVM! <br>
+A simple ToDo List app to practice Room and MVVM! <br>
 Self explanatory app that implements ViewModel, Room, Dagger/Hilt, and RecyclerView using mainly Kotlin/Android Studio.
 
 ## About
