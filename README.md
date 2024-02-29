@@ -1,7 +1,7 @@
 #         To-Do List
 
 ## Preface
-A simple ToDo List app to practice Room and MVVM! <br>
+A simple Todo List app to practice Room and MVVM! <br>
 
 ## About
 
